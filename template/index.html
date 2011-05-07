@@ -1,0 +1,24 @@
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src="https://www.google.com/jsapi"></script>
+        <script>google.load("jquery", "1");</script>
+        <script src="/static/lyase_view.js"></script>
+        <title>Lyase sample</title>
+    </head>
+    <body>
+        <div id="foo"></div>
+        <script>
+            $(function() {
+                $("#load_next").click(function() {
+                    var div = $("#foo");
+                    var add_body = Lyase.View.render({file : "/static/_parts.html"}, {
+                        loop_count : 3
+                    });
+                    div.append(add_body);
+                });
+            });
+        </script>
+        <input id="load_next" value="load_next" type="button" />
+    </body>
+</html>

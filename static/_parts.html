@@ -1,0 +1,17 @@
+<%
+    var d;
+    $.ajax({
+        async: false,
+        type: "GET",
+        url: "/perl_js/json.pl",
+        success: function(data) {
+            d = eval(data);
+        }
+    });
+%>
+
+<ul>
+<% for (var i=0, len=d.length; i<len; i++) { %>
+    <li>num: <%= d[i].num %>, rand_num: <%= d[i].rand_num %></li>
+<% } %>
+</ul>
